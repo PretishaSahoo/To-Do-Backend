@@ -9,7 +9,13 @@ require('dotenv').config();
 connectToMongo();
 
 app.use (express.json())
-app.use(cors())
+app.use(cors(
+    {
+        origin: ["https://to-do-backend-pretisha.vercel.app/"] ,
+        methods: ['POST' , 'DELETE','GET','PUT','PATCH'] , 
+        credentials: true
+    }
+))
 
 app.get("/",(req,res)=>{
     res.send("Server");
