@@ -10,10 +10,16 @@ connectToMongo();
 
 app.use (express.json())
 app.use(cors({
-    origin: "*,
+    origin: "*",
     methods: ['POST', 'DELETE', 'GET', 'PUT', 'PATCH'],
     credentials: true
 }));
+
+app.options("" ,cors({
+    origin: "*",
+    methods: ['POST', 'DELETE', 'GET', 'PUT', 'PATCH'],
+    credentials: true
+}) )
 
 app.get("/",(req,res)=>{
     res.send("Server");
