@@ -10,13 +10,13 @@ connectToMongo();
 
 app.use (express.json())
 app.use(cors({
-    origin: "*",
+    origin:  ["https://to-do-backend-pretisha.vercel.app/", "http://localhost:3000"],
     methods: ['POST', 'DELETE', 'GET', 'PUT', 'PATCH'],
     credentials: true
 }));
 
 app.options("" ,cors({
-    origin: "*",
+    origin:  ["https://to-do-backend-pretisha.vercel.app/", "http://localhost:3000"],
     methods: ['POST', 'DELETE', 'GET', 'PUT', 'PATCH'],
     credentials: true
 }) )
